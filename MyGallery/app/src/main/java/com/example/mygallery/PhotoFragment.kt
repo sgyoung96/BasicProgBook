@@ -10,12 +10,8 @@ import kotlinx.android.synthetic.main.fragment_photo.*
 
 private const val ARG_URI = "uri"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PhotoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PhotoFragment : Fragment() {
+
     private var uri: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

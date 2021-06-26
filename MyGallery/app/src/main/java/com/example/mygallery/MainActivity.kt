@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                                 null, // 가져올 항목 배열
                                 null, // 조건
                              null, // 조건
-                            MediaStore.Images.ImageColumns.DATE_TAKEN + "DESC" ) // 찍은 날짜 내림차순
+                            MediaStore.Images.ImageColumns.DATE_TAKEN + " DESC" ) // 찍은 날짜 내림차순
 
         val fragments = ArrayList<Fragment>()
 
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
         // 어댑터
         val adapter = MyPagerAdapter(supportFragmentManager)
         adapter.updateFragments(fragments)
-        viewPager.adapter = adapter
+        viewPager.adapter = adapter // ViewPager2 로 하니까 에러가 났다
 
         // 3초마다 자동 슬라이드
         timer(period = 3000) {
@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
 
         when (requestCode) {
             REQUEST_READ_EXTERNAL_STORAGE -> {
-                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_DENIED)) {
+                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                     // 권한 허용됨
                     getAllPhotos()
                 } else {

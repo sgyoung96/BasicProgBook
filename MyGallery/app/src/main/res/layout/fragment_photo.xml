@@ -13,5 +13,9 @@
         android:scaleType="centerCrop"
         tools:layout_editor_absoluteX="151dp"
         tools:layout_editor_absoluteY="232dp"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@tools:sample/avatars"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
